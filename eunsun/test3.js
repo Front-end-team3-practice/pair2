@@ -36,8 +36,7 @@ function searchArr(arr, num) {
 
   // 값이 있다면 검사하고자 하는 수를 제외한 배열을 반환
   if (searchNumArr !== "") {
-    const result = newArr.filter((el) => el !== searchNumArr);
-    // ??
+    const result = newArr.filter((el) => el !== num);
     return console.log(result);
   }
 }
