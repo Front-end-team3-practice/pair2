@@ -8,22 +8,24 @@ window.onload = function () {
 const tab = document.querySelectorAll('.tab');
 const tabContent = document.querySelectorAll('.block');
 
-function onTabClick(e) {
-    let itemIndex = [...tab].indexOf(e.target);
-    console.log(itemIndex);
-    console.log([...tab].indexOf(tab));
-    tab.forEach((tab) => {
-        if ([...tab].indexOf(tab) === itemIndex) {
-            tab.classList.add('active');
-        } else {
-            tab.classList.remove('active');
-        }
+function onTabClick(tabContentIndex) {
+    tab.forEach(function (item) {
+        item.style.backgroundColor = '';
+        item.style.color = '';
     });
+    tabContent.forEach(function (item) {
+        item.style.display = 'none';
+    });
+
+    tab[tabContentIndex].style.backgroundColor = '#0797ce';
+    tab[tabContentIndex].style.color = '#fff';
+    tabContent[tabContentIndex].style.display = 'block';
+    tabContent[tabContentIndex].style.backgroundColor = 'transparent';
 }
 
-tab.forEach((tab) => {
-    tab.addEventListener('click', onTabClick);
-});
+// tab.forEach((tab) => {
+//     tab.addEventListener('click', onTabClick);
+// });
 
 // ---------------------------------------문제 4번
 let verifyInput = document.querySelector('#te_input');
