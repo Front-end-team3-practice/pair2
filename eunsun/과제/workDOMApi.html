@@ -31,6 +31,7 @@
             .active_tab {
                 background-color: #0797ce;
                 color: #fff;
+                display: block;
             }
 
             #list {
@@ -40,6 +41,21 @@
             #te_input {
                 width: 600;
             }
+
+            /* .block {
+                display: none;
+            } */
+
+            /* .active {
+                display: block;
+                border-bottom: 1px solid #0797ce;
+                color: #000;
+                background-color: transparent;
+            } */
+
+            /* .show {
+                display: block;
+            } */
         </style>
     </head>
     <body>
@@ -52,11 +68,11 @@
 
             <p>2.탭을 선택하면 선택한 탭의 배경과 글자의색이 바뀌도록 하시오</p>
             <div class="tab_host">
-                <div class="tab">탭1</div>
-                <div class="tab">탭2</div>
-                <div class="tab">탭3</div>
-                <div class="tab">탭4</div>
-                <div class="tab">탭5</div>
+                <div class="tab" onClick="onTabClick(0)">탭1</div>
+                <div class="tab" onClick="onTabClick(1)">탭2</div>
+                <div class="tab" onClick="onTabClick(2)">탭3</div>
+                <div class="tab" onClick="onTabClick(3)">탭4</div>
+                <div class="tab" onClick="onTabClick(4)">탭5</div>
             </div>
 
             <p>3. 위의 탭 클릭시 아래의 컨텐츠중 탭과 숫자가 같은 것만 보이게 하시오.</p>
@@ -71,7 +87,13 @@
                 4. 아래의 입력창에 숫자가 입력되지 않도록 하고 길이 제한은 10자로 하시오.
                 <br />숫자가 입력된다면 숫자가 입력되었다고 alert로 알려주시오
             </p>
-            <input type="text" id="te_input" maxlength="9" placeholder="글자만 입력하세요." />
+            <input
+                type="text"
+                id="te_input"
+                maxlength="9"
+                placeholder="글자만 입력하세요."
+                focus="printText()"
+            />
 
             <p>
                 5.아래의 입력창에 입력 후 저장 버튼을 누르거나 엔터키를 누르면 입력한 내용이 아래의
